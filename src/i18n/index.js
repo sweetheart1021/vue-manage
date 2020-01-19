@@ -3,12 +3,12 @@
  * @Author: lvjing
  * @Date: 2020-01-16 14:01:25
  * @LastEditors  : lvjing
- * @LastEditTime : 2020-01-19 14:18:51
+ * @LastEditTime : 2020-01-19 14:52:23
  */
 import Vue from 'vue';
 import VueI18n from 'vue-i18n';
-import * as zh from './zh';
-import * as ja from './ja';
+import * as zh from './zh/index.js';
+import * as ja from './ja/index.js';
 
 import zhLocale from 'element-ui/lib/locale/lang/zh-CN';
 import jaLocale from 'element-ui/lib/locale/lang/ja';

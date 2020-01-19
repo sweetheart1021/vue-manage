@@ -3,7 +3,7 @@
  * @Author: lvjing
  * @Date: 2020-01-19 09:54:39
  * @LastEditors  : lvjing
- * @LastEditTime : 2020-01-19 14:13:31
+ * @LastEditTime : 2020-01-19 16:42:03
  */
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
@@ -18,10 +18,11 @@ import i18n from './i18n';
 
 import * as fundebug from 'fundebug-javascript';
 import fundebugVue from 'fundebug-vue';
+
 fundebug.init({
     apikey: '5d891ce6554898bab0678dabf831190bc287076b7f589e810a61677696b40084'
 });
-fundebugVue(fundebug, Vue);
+fundebugVue(fundebug, Vue); ;
 
 Vue.use(ElementUI, {
     size: 'small',

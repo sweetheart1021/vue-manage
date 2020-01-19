@@ -4,7 +4,7 @@
  * @Author: lvjing
  * @Date: 2020-01-18 10:45:48
  * @LastEditors  : lvjing
- * @LastEditTime : 2020-01-19 14:29:37
+ * @LastEditTime : 2020-01-19 16:50:15
  -->
 <template>
     <div class="a-web">
@@ -15,14 +15,13 @@
                 <img
                     :src="src"
                     alt="">
-                <div
+                <span
                     v-if="!isCollapse"
-                    class="a-logo-name">后台管理系统</div>
+                    class="a-logo-name">{{ $t('lang.logo') }}</span>
             </div>
             <div class="a-menu">
-                <base-menu></base-menu>
+                <the-menu></the-menu>
             </div>
-
         </aside>
         <section class="a-section">
             <div
@@ -37,21 +36,29 @@
                             v-for="(item, index) in bread"
                             :to="{ path: item.path }"
                             :key="index">
-                            <i :class="item.meta.icon"></i>
-                            {{ item.meta.name }}
+                            <template v-if="item.meta">
+                                <i :class="item.meta.icon"></i>
+                                <span>
+                                    {{ $t(item.meta.name) }}
+                                </span>
+                            </template>
                         </el-breadcrumb-item>
                     </el-breadcrumb>
                 </div>
                 <div class="a-header-right">
-                    <i
-                        :class=" !isScreen ? 'iconfont icon-quanping' : 'iconfont icon-quitquanping'"
-                        @click="toggleFullScreen">
-                    </i>
-                    <el-badge
-                        :value="12"
-                        style="line-height: 1">
-                        <i class="iconfont icon-ziyuan"></i>
-                    </el-badge>
+                    <div class="a-header-right-icon">
+                        <i
+                            :class=" !isScreen ? 'iconfont icon-quanping' : 'iconfont icon-quitquanping'"
+                            @click="toggleFullScreen">
+                        </i>
+                    </div>
+                    <div class="a-header-right-icon">
+                        <el-badge
+                            :value="12"
+                            style="line-height: 1">
+                            <i class="iconfont icon-ziyuan"></i>
+                        </el-badge>
+                    </div>
                     <el-dropdown
                         trigger="click"
                         placement="bottom">
@@ -94,7 +101,9 @@
                         trigger="click"
                         placement="bottom"
                         @command="handleCommand">
-                        <i class="iconfont icon-yuyan"></i>
+                        <div class="a-header-right-icon">
+                            <i class="iconfont icon-yuyan"></i>
+                        </div>
                         <el-dropdown-menu slot="dropdown">
                             <el-dropdown-item command="zh">
                                 简体中文
@@ -114,19 +123,21 @@
             <div
                 :style="contentWidth"
                 class="a-content">
-                <router-view />
+                <div class="a-main">
+                    <router-view />
+                </div>
             </div>
         </section>
     </div>
 </template>
 
 <script>
-import BaseMenu from '@/components/base/BaseMenu';
+import TheMenu from '@/components/common/TheMenu';
 import logo from '@/images/logo.jpg';
 import { mapState, mapMutations } from 'vuex';
 export default {
     components: {
-        BaseMenu
+        TheMenu
     },
     data() {
         return {
@@ -213,6 +224,10 @@ export default {
         position: relative;
         border-bottom: 1px solid #101117;
         line-height: 60px;
+        padding: 0 10px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
         & img{
             width: 30px;
             height: 30px;
@@ -224,9 +239,9 @@ export default {
             color: white;
             font-weight: bold;
             font-size: 16px;
-            display: inline-block;
             line-height: 60px;
             height: inherit;
+
         }
     }
     & .a-menu{
@@ -248,6 +263,7 @@ export default {
         box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
         line-height: 60px;
         transition: padding-left 0.3s;
+        background: white;
         & .el-icon-s-fold,
         & .el-icon-s-unfold{
             cursor: pointer;
@@ -260,18 +276,26 @@ export default {
         & .a-header-right{
             float: right;
             margin-right: 20px;
-            i{
-                cursor: pointer;
+            .a-header-right-icon{
                 display: inline-block;
-                padding: 0 10px;
+                cursor: pointer;
+                i{
+                    line-height: 1;
+                    display: inline-block;
+                    padding: 0 10px;
+                }
+                i:hover{
+                    color: #6190E8;
+                }
+                .icon-ziyuan{
+                    position: relative;
+                    top: -2px
+                }
             }
-            .icon-ziyuan{
-                font-weight: bold;
+            .a-header-right-icon:hover{
+                border-bottom: 2px solid #6190E8;
             }
-            i:hover{
-                // background: #f8f8f9;
-                color: #6190E8;
-            }
+
             & .a-header-welcome{
                 display: inline-block;
                 padding: 0 10px;
@@ -289,12 +313,23 @@ export default {
             & .a-header-welcome:hover{
                 background: #f8f8f9;
                 color: #6190E8;
+                border-bottom: 2px solid #6190E8;
             }
         }
     }
     .a-content{
-        padding: 60px 10px 0 0px;;
+        padding: 60px 10px 0 0px;
         transition: padding-left 0.3s;
+        height: calc(100vh - 60px);
+        background: #f2f2f2;
+        & .a-main{
+            margin-top: 10px;
+            height: calc(100vh - 80px);
+            background: white;
+            overflow-x: hidden;
+            overflow-y: auto;
+            padding: 5px;
+        }
     }
 }
 </style>

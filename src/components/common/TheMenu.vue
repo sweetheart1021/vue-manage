@@ -4,7 +4,7 @@
  * @Author: lvjing
  * @Date: 2020-01-17 23:25:17
  * @LastEditors  : lvjing
- * @LastEditTime : 2020-01-19 13:48:22
+ * @LastEditTime : 2020-01-19 15:10:12
  -->
 <template>
     <el-menu
@@ -26,7 +26,7 @@
                 <template slot="title">
                     <i :class="item.meta.icon"></i>
                     <span slot="title">
-                        {{ item.meta.name }}
+                        {{ $t(item.meta.name ) }}
                     </span>
                 </template>
                 <el-menu-item-group>
@@ -35,7 +35,7 @@
                         :key="childIndex"
                         :index="`${item.path}/${chlid.path}`">
                         <i :class="chlid.meta.icon"></i>
-                        {{ chlid.meta.name }}
+                        {{ $t(chlid.meta.name) }}
                     </el-menu-item>
                 </el-menu-item-group>
             </el-submenu>
@@ -44,7 +44,7 @@
                 :key="index"
                 :index="item.path">
                 <i :class="item.meta.icon"></i>
-                <span slot="title">{{ item.meta.name }}</span>
+                <span slot="title">{{ $t(item.meta.name) }}</span>
             </el-menu-item>
         </template>
     </el-menu>

@@ -4,13 +4,18 @@
  * @Author: lvjing
  * @Date: 2020-01-17 23:19:18
  * @LastEditors  : lvjing
- * @LastEditTime : 2020-01-19 11:23:52
+ * @LastEditTime : 2020-01-19 17:57:53
  */
+// 结果页面
+import ResultRouter from './result';
+
 const Layout = () => import('@/views/layout');
 const Home = () => import('@/views/home');
-const Console = () => import('@/views/home/children/console');
+const Console = () => import('@/views/home/console');
 
 const Component = () => import('@/views/component');
+const Editor = () => import('@/views/component/editor');
+
 const Guide = () => import('@/views/guide');
 
 // 总体根路由
@@ -30,7 +35,7 @@ const routeList = [
             premission: true,
             show: true,
             icon: 'el-icon-s-home',
-            name: '主页'
+            name: 'lang.menu.home'
         },
         children: [
             {
@@ -40,7 +45,7 @@ const routeList = [
                     premission: true,
                     show: true,
                     icon: 'el-icon-s-grid',
-                    name: '控制台'
+                    name: 'lang.menu.console'
                 }
             }
         ]
@@ -48,12 +53,25 @@ const routeList = [
     {
         path: '/component',
         component: Component,
+        redirect: '/component/editor',
         meta: {
             premission: true,
             show: true,
             icon: 'iconfont icon-zujian',
-            name: '组件'
-        }
+            name: 'lang.menu.component'
+        },
+        children: [
+            {
+                path: 'editor',
+                component: Editor,
+                meta: {
+                    premission: true,
+                    show: true,
+                    icon: 'iconfont icon-fuwenben',
+                    name: 'lang.menu.editor'
+                }
+            }
+        ]
     },
     {
         path: '/guide',
@@ -62,9 +80,10 @@ const routeList = [
             premission: true,
             show: true,
             icon: 'iconfont icon-yindao',
-            name: '引导页'
+            name: 'lang.menu.guide'
         }
-    }
+    },
+    ResultRouter
 ];
 
 rootRoute.children = routeList;

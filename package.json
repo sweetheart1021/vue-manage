@@ -14,6 +14,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "@tinymce/tinymce-vue": "^3.0.1",
     "element-ui": "^2.13.0",
     "fundebug-javascript": "^2.0.0",
     "fundebug-vue": "0.0.1",
@@ -21,6 +22,7 @@
     "less-loader": "^5.0.0",
     "vue": "^2.5.2",
     "vue-i18n": "^8.15.3",
+    "vue-quill-editor": "^3.0.6",
     "vue-router": "^3.0.1",
     "vuex": "^3.1.2"
   },

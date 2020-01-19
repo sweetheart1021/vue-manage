@@ -4,7 +4,7 @@
  * @Author: lvjing
  * @Date: 2020-01-18 10:45:48
  * @LastEditors  : lvjing
- * @LastEditTime : 2020-01-19 10:03:32
+ * @LastEditTime : 2020-01-19 14:29:37
  -->
 <template>
     <div class="a-web">
@@ -32,17 +32,26 @@
                     :class="!isCollapse ? 'el-icon-s-fold' : 'el-icon-s-unfold'"
                     @click="handleIsCollapse"></i>
                 <div class="a-header-bread">
-                    <el-breadcrumb separator="/">
-                        <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-                        <el-breadcrumb-item><a href="/">活动管理</a></el-breadcrumb-item>
-                        <el-breadcrumb-item>活动列表</el-breadcrumb-item>
-                        <el-breadcrumb-item>活动详情</el-breadcrumb-item>
+                    <el-breadcrumb separator-class="el-icon-arrow-right">
+                        <el-breadcrumb-item
+                            v-for="(item, index) in bread"
+                            :to="{ path: item.path }"
+                            :key="index">
+                            <i :class="item.meta.icon"></i>
+                            {{ item.meta.name }}
+                        </el-breadcrumb-item>
                     </el-breadcrumb>
                 </div>
                 <div class="a-header-right">
                     <i
                         :class=" !isScreen ? 'iconfont icon-quanping' : 'iconfont icon-quitquanping'"
-                        @click="toggleFullScreen"></i>
+                        @click="toggleFullScreen">
+                    </i>
+                    <el-badge
+                        :value="12"
+                        style="line-height: 1">
+                        <i class="iconfont icon-ziyuan"></i>
+                    </el-badge>
                     <el-dropdown
                         trigger="click"
                         placement="bottom">
@@ -50,33 +59,52 @@
                             <img
                                 :src="src"
                                 alt="">
-                            <span>欢迎您：admin</span>
+                            <span>
+                                {{ $t('lang.header.welcome') }}：admin
+                                <i
+                                    class="el-icon-arrow-down el-icon--right"
+                                    style="margin: 0;padding: 0"></i>
+                            </span>
                         </div>
                         <el-dropdown-menu slot="dropdown">
                             <el-dropdown-item>
-                                简体中文
+                                <i
+                                    class="el-icon-key"
+                                    style="margin-right: 0">
+                                </i>
+                                {{ $t('lang.header.changePwd') }}
                             </el-dropdown-item>
                             <el-dropdown-item>
-                                English
+                                <i
+                                    class="el-icon-setting"
+                                    style="margin-right: 0">
+                                </i>
+                                {{ $t('lang.header.setting') }}
                             </el-dropdown-item>
                             <el-dropdown-item>
-                                日本語
+                                <i
+                                    class="el-icon-switch-button"
+                                    style="margin-right: 0">
+                                </i>
+                                {{ $t('lang.header.out') }}
                             </el-dropdown-item>
                         </el-dropdown-menu>
                     </el-dropdown>
-
                     <el-dropdown
                         trigger="click"
-                        placement="bottom">
+                        placement="bottom"
+                        @command="handleCommand">
                         <i class="iconfont icon-yuyan"></i>
                         <el-dropdown-menu slot="dropdown">
-                            <el-dropdown-item>
+                            <el-dropdown-item command="zh">
                                 简体中文
                             </el-dropdown-item>
-                            <el-dropdown-item>
+                            <el-dropdown-item
+                                disabled
+                                command="en">
                                 English
                             </el-dropdown-item>
-                            <el-dropdown-item>
+                            <el-dropdown-item command="ja">
                                 日本語
                             </el-dropdown-item>
                         </el-dropdown-menu>
@@ -108,7 +136,8 @@ export default {
     },
     computed: {
         ...mapState({
-            isCollapse: (state) => state.Common.isCollapse
+            isCollapse: (state) => state.Common.isCollapse,
+            bread: (state) => state.Common.bread
         }),
         // logo div的宽度
         menuWidth() {
@@ -158,6 +187,10 @@ export default {
                     document.webkitExitFullscreen();
                 }
             }
+        },
+        handleCommand(command) {
+            this.$i18n.locale = command;
+            sessionStorage.setItem('locale', command);
         }
     }
 };
@@ -232,12 +265,19 @@ export default {
                 display: inline-block;
                 padding: 0 10px;
             }
+            .icon-ziyuan{
+                font-weight: bold;
+            }
             i:hover{
-                background: #f8f8f9;
+                // background: #f8f8f9;
+                color: #6190E8;
             }
             & .a-header-welcome{
                 display: inline-block;
                 padding: 0 10px;
+                cursor: pointer;
+                user-select: none;
+                margin-left: 15px;
                 & img{
                     width: 26px;
                     height: 26px;
@@ -248,6 +288,7 @@ export default {
             }
             & .a-header-welcome:hover{
                 background: #f8f8f9;
+                color: #6190E8;
             }
         }
     }

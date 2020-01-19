@@ -3,48 +3,73 @@
  * @version:
  * @Author: lvjing
  * @Date: 2020-01-17 23:19:18
- * @LastEditors  : lving
- * @LastEditTime : 2020-01-18 10:47:36
+ * @LastEditors  : lvjing
+ * @LastEditTime : 2020-01-19 11:23:52
  */
-const Login = () => import('@/views/login');
 const Layout = () => import('@/views/layout');
 const Home = () => import('@/views/home');
+const Console = () => import('@/views/home/children/console');
+
 const Component = () => import('@/views/component');
 const Guide = () => import('@/views/guide');
 
+// 总体根路由
+const rootRoute = {
+    path: '/',
+    redirect: '/home',
+    component: Layout,
+    children: []
+};
+
 const routeList = [
     {
-        path: '/',
-        redirect: '/home',
-        component: Layout,
+        path: '/home',
+        component: Home,
+        redirect: '/home/console',
+        meta: {
+            premission: true,
+            show: true,
+            icon: 'el-icon-s-home',
+            name: '主页'
+        },
         children: [
             {
-                path: '/home',
-                component: Home,
+                path: 'console',
+                component: Console,
                 meta: {
-                    premission: true
-                }
-            },
-            {
-                path: '/component',
-                component: Component,
-                meta: {
-                    premission: true
-                }
-            },
-            {
-                path: '/guide',
-                component: Guide,
-                meta: {
-                    premission: true
+                    premission: true,
+                    show: true,
+                    icon: 'el-icon-s-grid',
+                    name: '控制台'
                 }
             }
         ]
     },
     {
-        path: '/login',
-        component: Login
+        path: '/component',
+        component: Component,
+        meta: {
+            premission: true,
+            show: true,
+            icon: 'iconfont icon-zujian',
+            name: '组件'
+        }
+    },
+    {
+        path: '/guide',
+        component: Guide,
+        meta: {
+            premission: true,
+            show: true,
+            icon: 'iconfont icon-yindao',
+            name: '引导页'
+        }
     }
 ];
 
-export default routeList;
+rootRoute.children = routeList;
+
+export {
+    rootRoute,
+    routeList
+};

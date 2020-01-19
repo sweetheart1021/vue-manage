@@ -3,12 +3,12 @@
  * @Author: lvjing
  * @Date: 2019-09-06 17:16:05
  * @LastEditors  : lvjing
- * @LastEditTime : 2020-01-14 15:39:39
+ * @LastEditTime : 2020-01-19 13:39:54
  */
 
 const state = {
-    // 全局页面loading
-    loading: false,
+    // 面包屑
+    bread: [],
     isCollapse: false
 };
 

@@ -3,11 +3,9 @@
  * @version:
  * @Author: lvjing
  * @Date: 2020-01-17 22:59:33
- * @LastEditors: lving
- * @LastEditTime: 2020-01-17 22:59:40
+ * @LastEditors  : lvjing
+ * @LastEditTime : 2020-01-19 11:07:18
  -->
 <template>
-    <div>
-        首页
-    </div>
+    <router-view />
 </template>

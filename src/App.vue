@@ -3,8 +3,8 @@
  * @version:
  * @Author: lvjing
  * @Date: 2020-01-17 22:16:04
- * @LastEditors  : lving
- * @LastEditTime : 2020-01-18 09:25:58
+ * @LastEditors  : lvjing
+ * @LastEditTime : 2020-01-19 14:18:27
  -->
 <template>
     <div id="app">
@@ -14,7 +14,11 @@
 
 <script>
 export default {
-    name: 'App'
+    name: 'App',
+    mounted() {
+        let locale = sessionStorage.getItem('locale');
+        this.$i18n.locale = locale || 'ja';
+    }
 };
 </script>
 

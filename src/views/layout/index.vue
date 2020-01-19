@@ -4,7 +4,7 @@
  * @Author: lvjing
  * @Date: 2020-01-18 10:45:48
  * @LastEditors  : lvjing
- * @LastEditTime : 2020-01-19 16:50:15
+ * @LastEditTime : 2020-01-19 20:16:50
  -->
 <template>
     <div class="a-web">
@@ -218,7 +218,8 @@ export default {
     z-index: 1;
     overflow: hidden;
     transition: width 0.3s;
-    & .a-logo{
+    z-index: 2021;
+    .a-logo{
         height: 60px;
         text-align: center;
         position: relative;
@@ -228,14 +229,14 @@ export default {
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
-        & img{
+        img{
             width: 30px;
             height: 30px;
             border-radius: 90px;
             display: inline-block;
             vertical-align: middle;
         }
-        & .a-logo-name{
+        .a-logo-name{
             color: white;
             font-weight: bold;
             font-size: 16px;
@@ -244,7 +245,7 @@ export default {
 
         }
     }
-    & .a-menu{
+    .a-menu{
         height: calc(100vh - 60px);
         width: inherit;
         position: relative;
@@ -264,16 +265,17 @@ export default {
         line-height: 60px;
         transition: padding-left 0.3s;
         background: white;
-        & .el-icon-s-fold,
-        & .el-icon-s-unfold{
+        z-index: 2020;
+        .el-icon-s-fold,
+        .el-icon-s-unfold{
             cursor: pointer;
             font-size: 20px;
         }
-        & .a-header-bread{
+        .a-header-bread{
             display: inline-block;
             margin-left: 20px;
         }
-        & .a-header-right{
+        .a-header-right{
             float: right;
             margin-right: 20px;
             .a-header-right-icon{
@@ -296,13 +298,13 @@ export default {
                 border-bottom: 2px solid #6190E8;
             }
 
-            & .a-header-welcome{
+            .a-header-welcome{
                 display: inline-block;
                 padding: 0 10px;
                 cursor: pointer;
                 user-select: none;
                 margin-left: 15px;
-                & img{
+                img{
                     width: 26px;
                     height: 26px;
                     border-radius: 90px;
@@ -310,7 +312,7 @@ export default {
                     vertical-align: middle;
                 }
             }
-            & .a-header-welcome:hover{
+            .a-header-welcome:hover{
                 background: #f8f8f9;
                 color: #6190E8;
                 border-bottom: 2px solid #6190E8;
@@ -322,7 +324,7 @@ export default {
         transition: padding-left 0.3s;
         height: calc(100vh - 60px);
         background: #f2f2f2;
-        & .a-main{
+        .a-main{
             margin-top: 10px;
             height: calc(100vh - 80px);
             background: white;

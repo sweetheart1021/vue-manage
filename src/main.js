@@ -3,7 +3,7 @@
  * @Author: lvjing
  * @Date: 2020-01-19 09:54:39
  * @LastEditors  : lvjing
- * @LastEditTime : 2020-01-19 16:42:03
+ * @LastEditTime : 2020-01-19 20:48:28
  */
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
@@ -15,6 +15,7 @@ import ElementUI from 'element-ui';
 import './style/theme/index.css';
 import './style/index.less';
 import i18n from './i18n';
+import 'element-ui/lib/theme-chalk/base.css';
 
 import * as fundebug from 'fundebug-javascript';
 import fundebugVue from 'fundebug-vue';

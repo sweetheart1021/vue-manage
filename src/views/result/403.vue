@@ -3,43 +3,54 @@
  * @Author: lvjing
  * @Date: 2020-01-19 17:48:01
  * @LastEditors  : lvjing
- * @LastEditTime : 2020-01-19 20:50:08
+ * @LastEditTime : 2020-01-20 13:38:12
  -->
 <template>
     <div class="a-result-403">
         <el-button
             type="primary"
+            class="a-result-btn"
             @click="handleBack">
-            <i class="el-icon-back"></i>返回
+            <i class="el-icon-back"></i>
+            {{ $t('lang.result.page403.btn') }}
         </el-button>
         <el-row>
             <el-col :span="12">
-                <transition name="el-zoom-in-bottom">
-                    <div v-show="animation">
-                        <h1 class="a-result-title">Oops!</h1>
-                        <p class="a-result-source">gif来源airbnb 页面</p>
-                        <h2 class="a-result-desc">你没有权限去该页面 !!!</h2>
-                        <h6 class="a-result">如有不满请联系你领导</h6>
+                <div class="a-result-left">
+                    <h1 class="a-result-title">Oops!</h1>
+                    <p class="a-result-source">{{ $t('lang.result.page403.source') }}</p>
+                    <h2 class="a-result-desc">{{ $t('lang.result.page403.title') }}</h2>
+                    <div class="a-result-bottom">
+                        <h6 class="a-result">{{ $t('lang.result.page403.func') }}</h6>
                         <ul>
-                            <li>或者你可以去:</li>
+                            <li>{{ $t('lang.result.page403.other.name') }}:</li>
                             <li>
                                 <el-link
                                     type="primary"
-                                    @click="handleLi('/home')">回首页</el-link>
+                                    @click="handleLi('/home')"
+                                >
+                                    {{ $t('lang.result.page403.other.home') }}
+                                </el-link>
                             </li>
                             <li>
                                 <el-link
                                     type="primary"
-                                    @click="handleTaobao">随便看看</el-link>
+                                    @click="handleTaobao"
+                                >
+                                    {{ $t('lang.result.page403.other.look') }}
+                                </el-link>
                             </li>
                             <li>
                                 <el-link
                                     type="primary"
-                                    @click="dialogVisible=true">点我看图</el-link>
+                                    @click="dialogVisible=true"
+                                >
+                                    {{ $t('lang.result.page403.other.img') }}
+                                </el-link>
                             </li>
                         </ul>
                     </div>
-                </transition>
+                </div>
             </el-col>
             <el-col :span="12">
                 <img
@@ -49,7 +60,7 @@
         </el-row>
         <el-dialog
             :visible.sync="dialogVisible"
-            title="一张欢快的图片，祝您一天都有好心情！"
+            :title="$t('lang.result.page403.other.modalTitle')"
             width="840px"
             top="20px">
             <img
@@ -100,6 +111,29 @@ export default {
         font-weight: 700;
         color: #484848;
         font-size: 24px;
+    }
+}
+.a-result-btn{
+    animation: animation 0.6s ease-in forwards;
+}
+.a-result-title{
+    animation: animation 0.3s ease-in forwards;
+}
+.a-result-left{
+    animation: animation 0.4s ease-in forwards;
+}
+.a-result-bottom{
+    animation: animation 0.5s ease-in forwards;
+}
+
+@keyframes animation {
+    0% {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
     }
 }
 </style>

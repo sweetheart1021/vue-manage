@@ -4,7 +4,7 @@
  * @Author: lvjing
  * @Date: 2020-01-18 10:45:48
  * @LastEditors  : lvjing
- * @LastEditTime : 2020-01-19 20:16:50
+ * @LastEditTime : 2020-01-20 10:27:39
  -->
 <template>
     <div class="a-web">
@@ -66,7 +66,7 @@
                             <img
                                 :src="src"
                                 alt="">
-                            <span>
+                            <span class="a-header-settting">
                                 {{ $t('lang.header.welcome') }}：admin
                                 <i
                                     class="el-icon-arrow-down el-icon--right"
@@ -258,7 +258,7 @@ export default {
     .a-header{
         height: 60px;
         box-sizing: border-box;
-        position: fixed;
+        position: absolute;
         top: 0px;
         width: 100%;
         box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);

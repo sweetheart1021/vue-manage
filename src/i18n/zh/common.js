@@ -3,7 +3,7 @@
  * @Author: lvjing
  * @Date: 2020-01-19 14:38:40
  * @LastEditors  : lvjing
- * @LastEditTime : 2020-01-19 17:51:51
+ * @LastEditTime : 2020-01-20 13:55:34
  */
 const common = {
     logo: '后台管理系统',
@@ -24,7 +24,14 @@ const common = {
         error: '失败页面',
         page403: '403页面',
         page404: '404页面',
-        page500: '500页面'
+        page500: '500页面',
+        list: '列表页面',
+        goods: '商品列表',
+        notice: '消息通知'
+    },
+    guide: {
+        title: '引导页对于一些第一次进入项目的人很有用，你可以简单介绍下项目的功能。本 Demo 是基于',
+        btn: '开启引导页'
     }
 };
 export {

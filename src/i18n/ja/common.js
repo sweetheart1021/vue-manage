@@ -3,7 +3,7 @@
  * @Author: lvjing
  * @Date: 2020-01-19 14:38:35
  * @LastEditors  : lvjing
- * @LastEditTime : 2020-01-19 17:52:16
+ * @LastEditTime : 2020-01-20 13:55:47
  */
 const common = {
     logo: 'バックオフィス管理システム',
@@ -24,7 +24,14 @@ const common = {
         error: '失敗ページ',
         page403: '403ページ',
         page404: '404ページ',
-        page500: '500ページ'
+        page500: '500ページ',
+        list: 'リストページ',
+        goods: '商品リスト',
+        notice: 'メッセージ通知'
+    },
+    guide: {
+        title: '最初にプロジェクトに入った人にはガイドページが役立ちます。簡単にプロジェクトの機能を紹介します。本Demoはに基づく',
+        btn: '誘導ページを開く'
     }
 };
 export {

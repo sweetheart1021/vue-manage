@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@tinymce/tinymce-vue": "^3.0.1",
+    "driver.js": "^0.9.8",
     "element-ui": "^2.13.0",
     "fundebug-javascript": "^2.0.0",
     "fundebug-vue": "0.0.1",

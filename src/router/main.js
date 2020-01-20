@@ -4,10 +4,13 @@
  * @Author: lvjing
  * @Date: 2020-01-17 23:19:18
  * @LastEditors  : lvjing
- * @LastEditTime : 2020-01-19 17:57:53
+ * @LastEditTime : 2020-01-20 13:51:11
  */
 // 结果页面
 import ResultRouter from './result';
+
+// 列表页面
+import ListRoute from './list';
 
 const Layout = () => import('@/views/layout');
 const Home = () => import('@/views/home');
@@ -83,7 +86,8 @@ const routeList = [
             name: 'lang.menu.guide'
         }
     },
-    ResultRouter
+    ResultRouter,
+    ListRoute
 ];
 
 rootRoute.children = routeList;

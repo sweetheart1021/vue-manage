@@ -3,18 +3,15 @@
  * @Author: lvjing
  * @Date: 2020-01-19 16:03:00
  * @LastEditors  : lvjing
- * @LastEditTime : 2020-01-19 17:05:15
+ * @LastEditTime : 2020-01-20 11:24:14
  -->
 <template>
     <div>
-        <el-alert
-            :closable="false"
-            title="quill 富文本编辑器"
-            description="一款轻巧方便的富文本编辑器"
-            type="info"
-            effect="dark"
-            class="a-edit-alert">
-        </el-alert>
+        <div class="a-guide-alert">
+            <span>quill {{ $t("lang.component.quill.title") }}</span>
+            <br>
+            {{ $t("lang.component.quill.desc") }}
+        </div>
         <template>
             <quill-editor
                 ref="editor"
@@ -26,10 +23,10 @@
         <div class="a-editor-footer">
             <el-button
                 type="primary"
-                @click="handleContent('html')">获取html值</el-button>
+                @click="handleContent('html')">{{ $t("lang.component.quill.html") }}</el-button>
             <el-button
                 type="danger"
-                @click="handleContent('text')">获取text值</el-button>
+                @click="handleContent('text')">{{ $t("lang.component.quill.text") }}</el-button>
         </div>
     </div>
 </template>
@@ -64,8 +61,16 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.a-edit-alert{
+.a-guide-alert{
+    padding: 24px 40px;
+    text-align: left;
+    background: #f8f8f9;
+    border-radius: 4px;
     margin-bottom: 20px;
+    span{
+        font-size: 16px;
+        font-weight: bold;
+    }
 }
 .a-editor-footer{
     margin-top: 60px;

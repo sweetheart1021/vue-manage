@@ -4,7 +4,7 @@
  * @Author: lvjing
  * @Date: 2020-01-17 23:25:17
  * @LastEditors  : lvjing
- * @LastEditTime : 2020-01-19 15:10:12
+ * @LastEditTime : 2020-01-20 15:29:02
  -->
 <template>
     <el-menu
@@ -72,6 +72,7 @@ export default {
                 this.brea = [];
                 this.brea = val.matched.filter(v => v.path);
                 this.$store.commit('SET_BREAD', this.brea);
+                this.selectIndex = val.path;
             },
             immediate: true
         }

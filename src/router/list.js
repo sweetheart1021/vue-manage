@@ -3,13 +3,15 @@
  * @Author: lvjing
  * @Date: 2020-01-20 13:49:28
  * @LastEditors  : lvjing
- * @LastEditTime : 2020-01-20 13:55:54
+ * @LastEditTime : 2020-01-20 16:02:23
  */
 const List = () => import('@/views/list');
 
 const Goods = () => import('@/views/list/goods');
 
 const Notice = () => import('@/views/list/notice');
+
+const Table = () => import('@/views/list/table');
 
 const ListRoute = {
     path: '/list',
@@ -38,8 +40,18 @@ const ListRoute = {
             meta: {
                 premission: true,
                 show: true,
-                icon: 'iconfont icon-ziyuan',
+                icon: 'el-icon-bell',
                 name: 'lang.menu.notice'
+            }
+        },
+        {
+            path: 'table',
+            component: Table,
+            meta: {
+                premission: true,
+                show: true,
+                icon: 'el-icon-s-grid',
+                name: 'lang.menu.table'
             }
         }
     ]

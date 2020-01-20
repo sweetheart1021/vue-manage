@@ -3,10 +3,11 @@
  * @Author: lvjing
  * @Date: 2020-01-19 14:38:40
  * @LastEditors  : lvjing
- * @LastEditTime : 2020-01-20 13:55:34
+ * @LastEditTime : 2020-01-20 16:31:36
  */
 const common = {
     logo: '后台管理系统',
+    message: '切换成功，当前语言：',
     header: {
         welcome: '欢迎您',
         changePwd: '修改密码',
@@ -27,7 +28,11 @@ const common = {
         page500: '500页面',
         list: '列表页面',
         goods: '商品列表',
-        notice: '消息通知'
+        notice: '消息通知',
+        table: '查询表格',
+        detail: '详情页面',
+        basic: '基础详情页面',
+        senior: '高级详情页面'
     },
     guide: {
         title: '引导页对于一些第一次进入项目的人很有用，你可以简单介绍下项目的功能。本 Demo 是基于',

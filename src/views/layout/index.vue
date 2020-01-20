@@ -4,7 +4,7 @@
  * @Author: lvjing
  * @Date: 2020-01-18 10:45:48
  * @LastEditors  : lvjing
- * @LastEditTime : 2020-01-20 10:27:39
+ * @LastEditTime : 2020-01-20 16:09:54
  -->
 <template>
     <div class="a-web">
@@ -56,7 +56,10 @@
                         <el-badge
                             :value="12"
                             style="line-height: 1">
-                            <i class="iconfont icon-ziyuan"></i>
+                            <i
+                                class="iconfont icon-ziyuan"
+                                @click="handleNotice">
+                            </i>
                         </el-badge>
                     </div>
                     <el-dropdown
@@ -105,7 +108,7 @@
                             <i class="iconfont icon-yuyan"></i>
                         </div>
                         <el-dropdown-menu slot="dropdown">
-                            <el-dropdown-item command="zh">
+                            <el-dropdown-item command="zh,简体中文">
                                 简体中文
                             </el-dropdown-item>
                             <el-dropdown-item
@@ -113,7 +116,7 @@
                                 command="en">
                                 English
                             </el-dropdown-item>
-                            <el-dropdown-item command="ja">
+                            <el-dropdown-item command="ja,日本語">
                                 日本語
                             </el-dropdown-item>
                         </el-dropdown-menu>
@@ -200,8 +203,12 @@ export default {
             }
         },
         handleCommand(command) {
-            this.$i18n.locale = command;
-            sessionStorage.setItem('locale', command);
+            this.$i18n.locale = command.split(',')[0];
+            sessionStorage.setItem('locale', command.split(',')[0]);
+            this.$message.success(`${this.$t('lang.message')}${command.split(',')[1]}`);
+        },
+        handleNotice() {
+            this.$router.push({path: '/list/notice'});
         }
     }
 };

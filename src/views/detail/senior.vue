@@ -3,7 +3,7 @@
  * @Author: lvjing
  * @Date: 2020-01-20 16:28:14
  * @LastEditors  : lvjing
- * @LastEditTime : 2020-01-20 18:05:53
+ * @LastEditTime : 2020-01-20 19:01:04
  -->
 <template>
     <div class="a-senior">
@@ -59,7 +59,7 @@
             <el-step>
                 <span
                     slot="title"
-                    class="a-step-title">审批人：如意</span>
+                    class="a-step_title">审批人：如意</span>
             </el-step>
         </el-steps>
         <el-divider content-position="left">
@@ -163,7 +163,7 @@ export default {
     .a-step{
         margin-bottom: 40px;
         &_title{
-            font-size: 14px;
+            font-size: 14px !important;
         }
     }
 }

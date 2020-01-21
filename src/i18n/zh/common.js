@@ -3,7 +3,7 @@
  * @Author: lvjing
  * @Date: 2020-01-19 14:38:40
  * @LastEditors  : lvjing
- * @LastEditTime : 2020-01-20 16:31:36
+ * @LastEditTime : 2020-01-20 20:42:02
  */
 const common = {
     logo: '后台管理系统',
@@ -32,7 +32,10 @@ const common = {
         table: '查询表格',
         detail: '详情页面',
         basic: '基础详情页面',
-        senior: '高级详情页面'
+        senior: '高级详情页面',
+        form: '表单页面',
+        formBasic: '基础表单',
+        formSenior: '高级表单'
     },
     guide: {
         title: '引导页对于一些第一次进入项目的人很有用，你可以简单介绍下项目的功能。本 Demo 是基于',

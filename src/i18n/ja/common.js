@@ -3,7 +3,7 @@
  * @Author: lvjing
  * @Date: 2020-01-19 14:38:35
  * @LastEditors  : lvjing
- * @LastEditTime : 2020-01-20 16:32:10
+ * @LastEditTime : 2020-01-20 20:42:42
  */
 const common = {
     logo: 'バックオフィス管理システム',
@@ -32,7 +32,10 @@ const common = {
         table: 'チェックリスト',
         detail: '詳細ページ',
         basic: '基礎詳細ページ',
-        senior: '上位の詳細ページ'
+        senior: '上位の詳細ページ',
+        form: 'フォーム・ページ',
+        formBasic: 'ベース・フォーム',
+        formSenior: '高級フォーム'
     },
     guide: {
         title: '最初にプロジェクトに入った人にはガイドページが役立ちます。簡単にプロジェクトの機能を紹介します。本Demoはに基づく',

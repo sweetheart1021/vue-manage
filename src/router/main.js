@@ -4,7 +4,7 @@
  * @Author: lvjing
  * @Date: 2020-01-17 23:19:18
  * @LastEditors  : lvjing
- * @LastEditTime : 2020-01-20 16:30:30
+ * @LastEditTime : 2020-01-20 20:41:09
  */
 // 结果页面
 import ResultRouter from './result';
@@ -14,6 +14,9 @@ import ListRoute from './list';
 
 // 详情页面
 import DetailRoute from './detail';
+
+// 表单页面
+import FormRoute from './form';
 
 const Layout = () => import('@/views/layout');
 const Home = () => import('@/views/home');
@@ -91,7 +94,8 @@ const routeList = [
     },
     ResultRouter,
     ListRoute,
-    DetailRoute
+    DetailRoute,
+    FormRoute
 ];
 
 rootRoute.children = routeList;

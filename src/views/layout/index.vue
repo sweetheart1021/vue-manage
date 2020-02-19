@@ -3,8 +3,8 @@
  * @version:
  * @Author: lvjing
  * @Date: 2020-01-18 10:45:48
- * @LastEditors  : lvjing
- * @LastEditTime : 2020-01-20 16:09:54
+ * @LastEditors: lvjing
+ * @LastEditTime: 2020-02-19 14:48:08
  -->
 <template>
     <div class="a-web">
@@ -64,7 +64,8 @@
                     </div>
                     <el-dropdown
                         trigger="click"
-                        placement="bottom">
+                        placement="bottom"
+                        @command="handleCommandMenu">
                         <div class="a-header-welcome">
                             <img
                                 :src="src"
@@ -77,21 +78,21 @@
                             </span>
                         </div>
                         <el-dropdown-menu slot="dropdown">
-                            <el-dropdown-item>
+                            <el-dropdown-item command="1">
                                 <i
                                     class="el-icon-key"
                                     style="margin-right: 0">
                                 </i>
                                 {{ $t('lang.header.changePwd') }}
                             </el-dropdown-item>
-                            <el-dropdown-item>
+                            <el-dropdown-item command="2">
                                 <i
                                     class="el-icon-setting"
                                     style="margin-right: 0">
                                 </i>
                                 {{ $t('lang.header.setting') }}
                             </el-dropdown-item>
-                            <el-dropdown-item>
+                            <el-dropdown-item command="3">
                                 <i
                                     class="el-icon-switch-button"
                                     style="margin-right: 0">
@@ -206,6 +207,18 @@ export default {
             this.$i18n.locale = command.split(',')[0];
             sessionStorage.setItem('locale', command.split(',')[0]);
             this.$message.success(`${this.$t('lang.message')}${command.split(',')[1]}`);
+        },
+        handleCommandMenu(command) {
+            if (command === '3') {
+                this.$confirm('是否退出立即退出系统?', '提示', {
+                    confirmButtonText: '确定',
+                    cancelButtonText: '取消',
+                    type: 'error',
+                    customClass: 'a-menu-out'
+                }).then(() => {
+                    this.$router.push({path: '/login'});
+                }).catch(() => {});
+            }
         },
         handleNotice() {
             this.$router.push({path: '/list/notice'});

@@ -2,8 +2,8 @@
  * @Descripttion:
  * @Author: lvjing
  * @Date: 2020-01-19 17:48:01
- * @LastEditors  : lvjing
- * @LastEditTime : 2020-01-20 13:38:12
+ * @LastEditors: lvjing
+ * @LastEditTime: 2020-02-19 14:54:10
  -->
 <template>
     <div class="a-result-403">
@@ -54,6 +54,7 @@
             </el-col>
             <el-col :span="12">
                 <img
+                    v-if="isShow"
                     :src="src"
                     alt="">
             </el-col>
@@ -76,12 +77,17 @@ export default {
     data() {
         return {
             src: Src403,
+            isShow: false,
             dialogVisible: false,
             animation: false
         };
     },
     mounted() {
         this.animation = true;
+        this.isShow = true;
+    },
+    destroyed() {
+        this.isShow = false;
     },
     methods: {
         handleLi(path) {

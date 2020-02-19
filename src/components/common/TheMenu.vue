@@ -3,8 +3,8 @@
  * @version:
  * @Author: lvjing
  * @Date: 2020-01-17 23:25:17
- * @LastEditors  : lvjing
- * @LastEditTime : 2020-01-20 15:29:02
+ * @LastEditors: lvjing
+ * @LastEditTime: 2020-02-19 14:59:22
  -->
 <template>
     <el-menu
@@ -14,6 +14,7 @@
         background-color="#1d1e23"
         text-color="#fff"
         router
+        unique-opened
         @select="handleSelect">
         <template
             v-for="(item, index) in menus"
@@ -34,8 +35,10 @@
                         v-for="(chlid, childIndex) in item.children"
                         :key="childIndex"
                         :index="`${item.path}/${chlid.path}`">
-                        <i :class="chlid.meta.icon"></i>
-                        {{ $t(chlid.meta.name) }}
+                        <div class="a-menu-icon-wapper">
+                            <i :class="chlid.meta.icon"></i>
+                        </div>
+                        <span>{{ $t(chlid.meta.name) }}</span>
                     </el-menu-item>
                 </el-menu-item-group>
             </el-submenu>
@@ -97,5 +100,13 @@ export default {
 .a-menu{
     user-select: none;
     border-right: none;
+}
+.a-menu-icon-wapper{
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+}
+::-webkit-scrollbar {
+    display:none
 }
 </style>

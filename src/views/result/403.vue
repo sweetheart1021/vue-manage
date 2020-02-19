@@ -3,7 +3,7 @@
  * @Author: lvjing
  * @Date: 2020-01-19 17:48:01
  * @LastEditors: lvjing
- * @LastEditTime: 2020-02-19 14:54:10
+ * @LastEditTime: 2020-02-19 17:17:45
  -->
 <template>
     <div class="a-result-403">
@@ -17,7 +17,7 @@
         <el-row>
             <el-col :span="12">
                 <div class="a-result-left">
-                    <h1 class="a-result-title">Oops!</h1>
+                    <h1 class="a-result-title">403 !!!</h1>
                     <p class="a-result-source">{{ $t('lang.result.page403.source') }}</p>
                     <h2 class="a-result-desc">{{ $t('lang.result.page403.title') }}</h2>
                     <div class="a-result-bottom">

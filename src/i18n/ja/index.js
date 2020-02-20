@@ -2,13 +2,14 @@
  * @Descripttion:
  * @Author: lvjing
  * @Date: 2020-01-19 14:38:20
- * @LastEditors  : lvjing
- * @LastEditTime : 2020-01-20 15:17:36
+ * @LastEditors: lvjing
+ * @LastEditTime: 2020-02-20 09:53:18
  */
 import { common } from './common';
 import { component } from './component';
 import { result } from './result';
 import { list } from './list';
+import { login } from './login';
 
 const lang = {
     ...common,
@@ -20,6 +21,9 @@ const lang = {
     },
     list: {
         ...list
+    },
+    login: {
+        ...login
     }
 };
 

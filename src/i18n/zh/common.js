@@ -2,8 +2,8 @@
  * @Descripttion:
  * @Author: lvjing
  * @Date: 2020-01-19 14:38:40
- * @LastEditors  : lvjing
- * @LastEditTime : 2020-01-20 20:42:02
+ * @LastEditors: lvjing
+ * @LastEditTime: 2020-02-20 10:10:58
  */
 const common = {
     logo: '后台管理系统',
@@ -12,7 +12,11 @@ const common = {
         welcome: '欢迎您',
         changePwd: '修改密码',
         setting: '个人设置',
-        out: '退出登陆'
+        out: '退出登陆',
+        notice: '提示',
+        word: '是否退出立即退出系统',
+        cancel: '取消',
+        save: '确定'
     },
     menu: {
         home: '主页',

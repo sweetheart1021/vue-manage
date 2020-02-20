@@ -4,7 +4,7 @@
  * @Author: lvjing
  * @Date: 2020-01-18 10:45:48
  * @LastEditors: lvjing
- * @LastEditTime: 2020-02-19 14:48:08
+ * @LastEditTime: 2020-02-20 10:17:56
  -->
 <template>
     <div class="a-web">
@@ -210,9 +210,9 @@ export default {
         },
         handleCommandMenu(command) {
             if (command === '3') {
-                this.$confirm('是否退出立即退出系统?', '提示', {
-                    confirmButtonText: '确定',
-                    cancelButtonText: '取消',
+                this.$confirm(`${this.$t('lang.header.word')}?`, `${this.$t('lang.header.notice')}`, {
+                    confirmButtonText: `${this.$t('lang.header.save')}`,
+                    cancelButtonText: `${this.$t('lang.header.cancel')}`,
                     type: 'error',
                     customClass: 'a-menu-out'
                 }).then(() => {

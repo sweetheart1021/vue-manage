@@ -2,8 +2,8 @@
  * @Descripttion:
  * @Author: lvjing
  * @Date: 2020-01-19 14:38:35
- * @LastEditors  : lvjing
- * @LastEditTime : 2020-01-20 20:42:42
+ * @LastEditors: lvjing
+ * @LastEditTime: 2020-02-20 10:11:43
  */
 const common = {
     logo: 'バックオフィス管理システム',
@@ -12,7 +12,11 @@ const common = {
         welcome: 'ようこそ',
         changePwd: 'パスワードを修正する',
         setting: '個人設定',
-        out: 'ログアウト'
+        out: 'ログアウト',
+        notice: '提示',
+        word: 'システムを脱退するかどうか',
+        cancel: 'キャンセル',
+        save: '確定'
     },
     menu: {
         home: 'ホームページ',

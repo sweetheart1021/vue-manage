@@ -3,7 +3,7 @@
  * @Author: lvjing
  * @Date: 2020-01-19 14:38:35
  * @LastEditors: lvjing
- * @LastEditTime: 2020-02-20 10:11:43
+ * @LastEditTime: 2020-02-20 10:31:16
  */
 const common = {
     logo: 'バックオフィス管理システム',
@@ -19,7 +19,7 @@ const common = {
         save: '確定'
     },
     menu: {
-        home: 'ホームページ',
+        home: '作業台',
         console: 'コンソール',
         component: 'コンポーネント',
         editor: 'テキスト・エディタ',

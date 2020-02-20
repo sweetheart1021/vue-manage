@@ -3,7 +3,7 @@
  * @Author: lvjing
  * @Date: 2020-01-19 14:38:40
  * @LastEditors: lvjing
- * @LastEditTime: 2020-02-20 10:10:58
+ * @LastEditTime: 2020-02-20 10:31:05
  */
 const common = {
     logo: '后台管理系统',
@@ -19,7 +19,7 @@ const common = {
         save: '确定'
     },
     menu: {
-        home: '主页',
+        home: '工作台',
         console: '控制台',
         component: '组件',
         editor: '富文本编辑器',
